@@ -1,0 +1,238 @@
+#######################################################
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+G:\>symcfg -sid 080 list -pools -thin -tb -detail
+
+Symmetrix ID: 000298700080
+
+                                S Y M M E T R I X   T H I N   P O O L S
+
+--------------------------------------------------------------------------------
+----------------------
+Pool         Flags  Dev               Total     Usable       Free       Used Ful
+l Subs Comp     Shared
+Name         PTECSL Config              TBs        TBs        TBs        TBs  (%
+)  (%)  (%)        TBs
+------------ ------ ------------ ---------- ---------- ---------- ---------- ---
+- ---- ---- ----------
+THMIR600FC   TFFDEI 2-Way Mir         25.57      25.57       3.98      21.58   8
+4  587    0       0.00
+TH3R5200EFD  TEFDEI RAID-5(3+1)        1.07       1.07       0.06       1.02   9
+4    0    0       0.00
+TH6R6ATA1    TSFDEI RAID-6(6+2)      128.97     128.97      52.01      76.96   5
+9   20    0       0.00
+
+Total                            ---------- ---------- ---------- ---------- ---
+- ---- ---- ----------
+TBs                                  155.62     155.62      56.05      99.57   6
+3  113    0       0.00
+
+Legend:
+  (P)ool Type:
+    S = Snap,  R = Rdfa DSE,  T = Thin
+  (T)echnology:
+    S = SATA, F = Fibre Channel, E = Enterprise Flash Drive, M = Mixed, - = N/A
+  Dev (E)mulation:
+    F = FBA, A = AS400, 8 = CKD3380, 9 or C = CKD3390, - = N/A
+  (C)ompression:
+    E = Enabled, D = Disabled, N = Enabling, S = Disabling, - = N/A
+  (S)tate:
+    E = Enabled, D = Disabled, B = Balancing
+  Disk (L)ocation:
+    I = Internal, X = External, M = Mixed, - = N/A
+
+
+
+G:\>symaccess -sid 080 list -type initiator
+
+Symmetrix ID          : 000298700080
+
+
+Initiator Group Name
+--------------------------------
+CIG_GBPB-VH-ST001-006
+CIG_GBPB-VH-ST010-019
+IG-GBPB-VH-ST013
+IG_GB_VG2
+IG_GBAN_POC
+IG_GBPB-VH-ST001
+IG_GBPB-VH-ST002
+IG_GBPB-VH-ST003
+IG_GBPB-VH-ST004
+IG_GBPB-VH-ST005
+IG_GBPB-VH-ST006
+IG_GBPB-VH-ST010
+IG_GBPB-VH-ST011
+IG_GBPB-VH-ST012
+IG_GBPB-VH-ST014
+IG_GBPB-VH-ST015
+IG_GBPB-VH-ST016
+IG_GBPB-VH-ST017
+IG_GBPB-VH-ST018
+IG_GBPB-VH-ST019
+IG_GBPB-VH-ST020
+IG_GBPB-VH-ST021
+IG_GBPB_POC
+IG_WWHCDDEV011
+IG_WWHCDDEV012
+IG_WWHCDUAT011
+IG_WWHCDUAT012
+IG_WWHGZDEV2
+
+
+G:\>symaccess -sid 080 list view
+
+Symmetrix ID          : 000298700080
+
+Masking View Name   Initiator Group     Port Group          Storage Group
+------------------- ------------------- ------------------- -------------------
+Back_Office_and_Fi* CIG_GBPB-VH-ST010-* PG_DEV_PG1          Back_Office_and_Fi*
+Dev                 CIG_GBPB-VH-ST010-* PG_DEV_PG1          Dev
+MV_GB-PB-CT-VT5_RDM CIG_GBPB-VH-ST001-* PG_DEV_PG1          SG_GB-PB-CT-VT5_RDM
+MV_GBAN_POC         IG_GBAN_POC         PG_DEV_PG1          SG_GBAN_POC
+MV_GBPB-CYB-VT1     CIG_GBPB-VH-ST001-* PG_DEV_PG1          SG_GBPB-CYB-VT1
+MV_GBPB-CYB-VT2     CIG_GBPB-VH-ST001-* PG_DEV_PG1          SG_GBPB-CYB-VT2
+MV_GBPB-EMCU-ST01_* IG_GBPB-VH-ST010    PG_MGMT             SG_GBPB-EMCU-ST01_*
+MV_GBPB-ESB-PPC32_* CIG_GBPB-VH-ST010-* PG_DEV_PG1          SG_GBPB-ESB-PPC32_*
+MV_GBPB-GEC-VU01    CIG_GBPB-VH-ST010-* PG_DEV_PG1          SG_GPBP-GEC-VU01
+MV_GBPB-RTC-VT1     CIG_GBPB-VH-ST001-* PG_DEV_PG1          SG_GBPB-RTC-VT1
+MV_GBPB-UMB-PPD41_* CIG_GBPB-VH-ST010-* PG_DEV_PG1          SG_GBPB-UMB-PPD41_*
+MV_GBPB-VH-010-019* CIG_GBPB-VH-ST010-* PG_DEV_PG1          Online_and_Order_C*
+MV_GBPB-VH-10-19_R* CIG_GBPB-VH-ST010-* PG_DEV_PG1          SG_GBPB-VH-10-19_R*
+MV_GBPB-VH-ST001-0* CIG_GBPB-VH-ST001-* PG_DEV_PG1          Legacy
+MV_GBPB-VH-TEST-St* CIG_GBPB-VH-ST010-* PG_DEV_PG1          SG_GBPB-VH-TEST-St*
+MV_GBPB_EKT_VU01    CIG_GBPB-VH-ST010-* PG_DEV_PG1          SG_GBPB-EKT-VU01
+MV_GBPB_POC         IG_GBPB_POC         PG_DEV_PG1          SG_GBPB_POC
+MV_GBPB_SQL_VT1     CIG_GBPB-VH-ST001-* PG_DEV_PG1          SG_GBPB_SQL_VT1
+MV_NWKR_LEGACY      CIG_GBPB-VH-ST001-* PG_DEV_PG1          SG_NWKR_LEGACY
+MV_NWKR_ONEPLTM     CIG_GBPB-VH-ST010-* PG_DEV_PG1          SG_NWKR_ONEPLTM
+MV_OMDB             CIG_GBPB-VH-ST010-* PG_DEV_PG1          SG_OMDB
+MV_RDM_block_clone  CIG_GBPB-VH-ST010-* PG_DEV_PG1          RDM_block_clone_SG
+MV_VBA_Test_Temp    CIG_GBPB-VH-ST001-* PG_DEV_PG1          VBA_Test_Tmp
+MV_VG2              IG_GB_VG2           PG_DEV2_PG4         SG_VG2
+MV_VOLTA_RAP        CIG_GBPB-VH-ST010-* PG_DEV_PG1          SG_VOLTA_RAP
+MV_WWHCDDEV011      IG_WWHCDDEV011      PG_DEV_PG1          SG_WWHCDDEV011
+MV_WWHCDDEV012      IG_WWHCDDEV012      PG_DEV_PG1          SG_WWHCDDEV012
+MV_WWHCDUAT011      IG_WWHCDUAT011      PG_DEV_PG1          SG_WWHCDUAT011
+MV_WWHCDUAT012      IG_WWHCDUAT012      PG_DEV_PG1          SG_WWHCDUAT012
+MV_WWHGZDEV2        IG_WWHGZDEV2        PG_DEV_PG1          SG_WWHGZDEV2
+Processing          CIG_GBPB-VH-ST010-* PG_DEV_PG1          Processing
+
+
+G:\>symconfigure -sid 080 -cmd "create dev count=40, size=128 gb, emulation=fba,
+config=tdev;" preview -nop
+
+A Configuration Change operation is in progress. Please wait...
+
+    Establishing a configuration change session...............Established.
+    Processing symmetrix 000298700080
+    Performing Access checks..................................Allowed.
+    Checking Device Reservations..............................Allowed.
+    Validating configuration changes..........................Validated.
+
+      New symdevs: 00643:0066A [TDEVs]
+    Closing configuration change request......................Closed.
+    Terminating the configuration change session..............Done.
+
+The configuration change session has completed successfully.
+
+
+G:\>symconfigure -sid 080 -cmd "create dev count=40, size=128 gb, emulation=fba,
+config=tdev;" commit -nop
+
+A Configuration Change operation is in progress. Please wait...
+
+    Establishing a configuration change session...............Established.
+    Processing symmetrix 000298700080
+    Performing Access checks..................................Allowed.
+    Checking Device Reservations..............................Allowed.
+    Initiating COMMIT of configuration changes................Queued.
+    COMMIT requesting required resources......................Obtained.
+    Step 008 of 071 steps.....................................Executing.
+    Step 040 of 086 steps.....................................Executing.
+    Step 065 of 086 steps.....................................Executing.
+    Step 070 of 087 steps.....................................Executing.
+    Step 070 of 087 steps.....................................Executing.
+    Local:  COMMIT............................................Done.
+
+      New symdevs: 00643:0066A [TDEVs]
+    Terminating the configuration change session..............Done.
+
+The configuration change session has successfully completed.
+
+G:\>symconfigure -sid 080 -cmd "form meta from dev 00643, count=40, config=conca
+tenated;" preview -nop
+
+A Configuration Change operation is in progress. Please wait...
+
+    Establishing a configuration change session...............Established.
+    Processing symmetrix 000298700080
+    Performing Access checks..................................Allowed.
+    Checking Device Reservations..............................Allowed.
+    Locking devices...........................................Locked.
+    Validating configuration changes..........................Validated.
+    Closing configuration change request......................Closed.
+    Terminating the configuration change session..............Done.
+
+The configuration change session has completed successfully.
+
+
+G:\>symconfigure -sid 080 -cmd "form meta from dev 00643, count=40, config=conca
+tenated;" commit -nop
+
+A Configuration Change operation is in progress. Please wait...
+
+    Establishing a configuration change session...............Established.
+    Processing symmetrix 000298700080
+    Performing Access checks..................................Allowed.
+    Checking Device Reservations..............................Allowed.
+    Locking devices...........................................Locked.
+    Initiating COMMIT of configuration changes................Queued.
+    COMMIT requesting required resources......................Obtained.
+    Step 014 of 031 steps.....................................Executing.
+    Local:  COMMIT............................................Done.
+    Terminating the configuration change session..............Done.
+
+The configuration change session has successfully completed.
+
+
+G:\>symdev -sid 080 bind 00643 -pool TH6R6ATA1
+
+Execute a 'Bind' Device operation for device '00643' (y/[n]) ? y
+
+'Bind' Device operation successfully completed for the device.
+
+G:\>symaccess -sid 080 -type storage -name Online_and_Order_Capture -dev 00643 a
+dd
+
+G:\>symaccess -sid 080 list devinfo | find "00643"
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+ 00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+  00643 01E:001  Not Visible               8e  (M) 5242913 MV_GBPB-VH-010-019_SH
+AR*
+
+G:\>
